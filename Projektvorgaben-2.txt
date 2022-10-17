@@ -1,0 +1,80 @@
+Beschreibungen zu Mockups und Neudefinition Projektziele:
+
+Bemerkungen von Martin:
+- Oberflächen werden gegeben
+	- Funktionalitäten müssen selbst definiert und implementiert werden
+		- d.h. Funktionsdefinition und Verknüpfung mit GUI-Dateien
+			- dazu kommt noch eine Übung
+- Datenbank wird gegeben
+	- neue Datenfelder sind für Grundanforderungen nicht notwendig, können aber 
+		für optionale Features notwendig sein (z.B. Anmeldung)
+
+Bemerkungen von Hartmut:
+- GUI-Mockup und Look-and-Feel:
+	- Farben (zur Orientierung):
+		- hellgrau = Textfelder
+		- blau = Buttons zur generellen Steuerung
+		- orange = Buttons, die spezielle Funktionalitäten aufrufen
+		
+	- Buttons:
+		- Suchen: mit den in der Maske eigegebenen Daten passende Datensätze auf 
+			Datenbank suchen (z.B. Artikelpreis eingegeben, alle anderen Felder leer
+			sucht alle Artikel mit dem entsprechenden Preis)
+		- Neu: Maske leeren, damit neuer Datensatz eingegeben werden kann
+		- Speichern: aktuelle Daten speichern --> inkl. Prüfung, ob neuer Datensatz
+			oder geänderter Datensatz
+		- Löschen: Löschen des aktuellen Datensatzes
+		- << >> springe jeweils zum nächsten gefundenen Datensatz
+			- z.B. wenn bei Suche mehrere Datensätze gefunden wurden
+			- oder deaktiviert, wenn kein weiterer vorhanden
+		- Zurück: immer zurück zum Hauptmenü
+		
+	- Generell:
+		- Bestellungen dienen gleichzeitig der Abbildung der Rechnungen
+		- In Bestellungen dürfen nur kompatible Artikel zusammen verkauft werden
+		- In Bestellungen dürfen nur Artikel verkauft werden, die einen Bestand 
+			aufweisen
+		- Artikel bilden gleichzeitig das Lager mit ab
+		- Änderungen an Daten, nur wenn ein eindeutiger passender Datensatz anhand 
+			des Primärschlüssels gefunden wird
+			- optional: Speichern ausgrauen, wenn nicht
+		- Suche auf leerer Maske, gibt alle passenden Daten für Maske aus
+		- Speichern einer leeren Maske, führt keine Änderungen/Einfügungen aus
+			- optional: Button ausgrauen
+		- optional: Anmeldung mit Nutzer + Passwort 
+			- wird auch nicht initial mit Datenbank ausgeliefert
+		- STARK OPTIONAL: Suche mit Platzhaltern implementieren
+			- z.B. Kunde Nachname mit M%ller liefert Mueller, Müller, ... 
+		
+	- Maske Kunde:
+		- Feld "Händler" ist eine Checkbox
+		- Zeige Bestellungen:
+			- Öffne Maske Bestellungen mit ausgeführter Suche aller Bestellungen
+				des Kunden
+		- Zeige Projekte:
+			- Öffne Maske Bestellungen mit ausgeführter Suche aller Projekte
+				des Kunden
+	- Maske Artikel:
+		- Feld Lagerfach: Es gibt eindeutige Benennungen für die Lagerfächer.
+		- Zeige Konflikte:
+			- Öffne Maske Artikelkonflikte mit ausgeführter Suche der inkompatiblen
+				Artikel passend zum ursprünglichen Artikel
+	- Maske Bestellungen:
+		- dient auch zur Verwaltung von Projektkonfigurationen
+		- Feld "Ist Konfiguration": 
+			- Checkbox
+			- Zeigt, ob die angegebene Bestellung eine Projektkonfiguration ist
+		- Positionen:
+				- Öffne Maske Bestellposition mit ausgeführter Suche der zugehörigen
+					Bestellung
+		- Exportiere Monat: 
+			- Exportiere für einen einzugebenden Monat alle in diesem
+				Zeitraum bezahlten Bestellungen
+	- Maske Bestellposition:
+		- Zur Bestellung:
+			- Öffne Maske Bestellung mit entsprechend ausgeführter Suche nach der 
+				zugehörigen Bestellung
+	- Maske Artikelkonflikte:
+		- AUSNAHME:
+			- Neu: Füge Konfliktsatz entsprechend eingegebener Artikelnummer im Feld 
+				"Artikelnummer Konflikt" hinzu --> Überprüfungen nicht vergessen

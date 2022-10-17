@@ -1,0 +1,22 @@
+GUI	= Max
+Anbindung an die Datenbank	= Jonas
+Menu: Bestellungen Funktionen
+Hauptmenu
+Login	 = Jonas
+Menu: Kunde Funktionen
+Menu: Lager Funktionen
+Menu: Bestellposition
+Menu: Artikelkonflikte
+Datev Export	= Sebastian
+Autovervollständigung
+Suchenfunktion SQL	 = Sebastian
+Löschfunktion
+Ergebnisse anzeigen
+Objekte erstellen = Jonas
+Datenbank Tabelle für Benutzer erstellen	= Jonas
+
+- PEP 8 Black
+- Camel-Case-Notation
+- Docstrings
+
+https://www.python.org/dev/peps/pep-0008/#function-and-variable-names

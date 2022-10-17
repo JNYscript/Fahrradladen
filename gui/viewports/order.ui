@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>590</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Bestellungen</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: qlineargradient(spread:pad, x1:0.0910909, y1:0.108, x2:1, y2:1, stop:0 rgba(15, 41, 46, 255), stop:1 rgba(26, 109, 117, 255));</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLineEdit" name="input_order_search">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>311</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255, 50);
+font: 57 16pt &quot;Maven Pro Medium&quot;;
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="placeholderText">
+     <string>Suche ..</string>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="listView_order_searchlist">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>70</y>
+      <width>371</width>
+      <height>461</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 57 14pt &quot;Maven Pro Medium&quot;;
+color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="input_order_orderId">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>20</y>
+      <width>351</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255, 50);
+font: 57 16pt &quot;Maven Pro Medium&quot;;
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="placeholderText">
+     <string>Bestellnummer ..</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="input_order_priceExVat">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>164</y>
+      <width>171</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255, 50);
+font: 57 16pt &quot;Maven Pro Medium&quot;;
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="placeholderText">
+     <string>Preis in € ..</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="button_order_deleteorder">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>540</y>
+      <width>231</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="toolTip">
+     <string>Strg + Entf</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(220, 100, 120, 150);
+alternate-background-color: rgba(0, 0, 0, 50);
+font: 57 16pt &quot;Maven Pro Medium&quot;;
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>Bestellung löschen</string>
+    </property>
+    <property name="shortcut">
+     <string>Ctrl+Del</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="button_order_newOrder">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>540</y>
+      <width>201</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="toolTip">
+     <string>Strg + Enter</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255, 50);
+alternate-background-color: rgba(0, 0, 0, 50);
+font: 57 16pt &quot;Maven Pro Medium&quot;;
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>Neue Bestellung</string>
+    </property>
+    <property name="shortcut">
+     <string>Ctrl+Return</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="button_order_back">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>540</y>
+      <width>161</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="toolTip">
+     <string>Esc</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255, 50);
+alternate-background-color: rgba(0, 0, 0, 50);
+font: 57 16pt &quot;Maven Pro Medium&quot;;
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>Zurück</string>
+    </property>
+    <property name="shortcut">
+     <string>Esc</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>140</y>
+      <width>181</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Maven Pro</family>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+background-color: rgba(255, 255, 255, 0);</string>
+    </property>
+    <property name="text">
+     <string>Gesamtpreis Netto</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>140</y>
+      <width>191</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Maven Pro</family>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+background-color: rgba(255, 255, 255, 0);</string>
+    </property>
+    <property name="text">
+     <string>Gesamtpreis Brutto</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>60</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Maven Pro</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+background-color: rgba(255, 255, 255, 0);</string>
+    </property>
+    <property name="text">
+     <string>Kunde</string>
+    </property>
+   </widget>
+   <widget class="QDateTimeEdit" name="dateTimeEdit_order_orderdate">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>90</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+background-color: rgba(255, 255, 255, 50);
+</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>60</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Maven Pro</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+background-color: rgba(255, 255, 255, 0);</string>
+    </property>
+    <property name="text">
+     <string>Datum</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="input_order_priceIncVat">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>164</y>
+      <width>171</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255, 50);
+font: 57 16pt &quot;Maven Pro Medium&quot;;
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="placeholderText">
+     <string>Preis in € ..</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkbox_order_isConfiguration">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>444</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Maven Pro Medium</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255, 0);
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>ist Konfiguration</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkbox_order_isPayed">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>490</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Maven Pro Medium</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255, 0);
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>ist Bezahlt</string>
+    </property>
+   </widget>
+   <widget class="QDateTimeEdit" name="dateTimeEdit_order_paymentdate">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>490</y>
+      <width>181</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+background-color: rgba(255, 255, 255, 50);
+</string>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="listView_order_lineitems">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>240</y>
+      <width>361</width>
+      <height>191</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 57 14pt &quot;Maven Pro Medium&quot;;
+color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="button_order_addLineItem">
+    <property name="geometry">
+     <rect>
+      <x>740</x>
+      <y>390</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="toolTip">
+     <string>Str + P</string>
+    </property>
+    <property name="toolTipDuration">
+     <number>-1</number>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255, 255);
+alternate-background-color: rgba(0, 0, 0, 50);
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../edit.png</normaloff>../edit.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>25</width>
+      <height>25</height>
+     </size>
+    </property>
+    <property name="shortcut">
+     <string>Ctrl+P</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="button_order_clear">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>540</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="toolTip">
+     <string>Strg + Rück (&lt;--)</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255, 50);
+alternate-background-color: rgba(0, 0, 0, 50);
+font: 57 16pt &quot;Maven Pro Medium&quot;;
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>leeren</string>
+    </property>
+    <property name="shortcut">
+     <string>Ctrl+Backspace</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="input_order_customerID">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>90</y>
+      <width>171</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255, 50);
+font: 57 16pt &quot;Maven Pro Medium&quot;;
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="readOnly">
+     <bool>false</bool>
+    </property>
+    <property name="placeholderText">
+     <string>Kunden ID</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="button_order_searchGo">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>20</y>
+      <width>51</width>
+      <height>33</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="toolTip">
+     <string>Enter</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255, 50);
+alternate-background-color: rgba(0, 0, 0, 50);
+font: 57 16pt &quot;Maven Pro Medium&quot;;
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>Los</string>
+    </property>
+    <property name="shortcut">
+     <string>Return</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>215</y>
+      <width>181</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Maven Pro</family>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+background-color: rgba(255, 255, 255, 0);</string>
+    </property>
+    <property name="text">
+     <string>Bestellpositionen</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="logo_login">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>500</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../datev.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="button_order_datevExportlabel">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>500</y>
+      <width>181</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(134, 189, 65, 255);
+alternate-background-color: rgba(134, 189, 65, 255);
+font: 57 12pt &quot;Maven Pro Medium&quot;;
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>DATEV Export   </string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::AutoText</enum>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="button_order_datevExport">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>500</y>
+      <width>201</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="toolTip">
+     <string>Strg + E</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255, 0);
+alternate-background-color: rgba(0, 0, 0, 0);
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="shortcut">
+     <string>Ctrl+E</string>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <zorder>input_order_search</zorder>
+   <zorder>listView_order_searchlist</zorder>
+   <zorder>input_order_orderId</zorder>
+   <zorder>input_order_priceExVat</zorder>
+   <zorder>button_order_deleteorder</zorder>
+   <zorder>button_order_newOrder</zorder>
+   <zorder>button_order_back</zorder>
+   <zorder>label</zorder>
+   <zorder>label_2</zorder>
+   <zorder>label_4</zorder>
+   <zorder>dateTimeEdit_order_orderdate</zorder>
+   <zorder>label_6</zorder>
+   <zorder>input_order_priceIncVat</zorder>
+   <zorder>checkbox_order_isConfiguration</zorder>
+   <zorder>checkbox_order_isPayed</zorder>
+   <zorder>dateTimeEdit_order_paymentdate</zorder>
+   <zorder>listView_order_lineitems</zorder>
+   <zorder>button_order_addLineItem</zorder>
+   <zorder>button_order_clear</zorder>
+   <zorder>input_order_customerID</zorder>
+   <zorder>button_order_searchGo</zorder>
+   <zorder>label_3</zorder>
+   <zorder>button_order_datevExportlabel</zorder>
+   <zorder>logo_login</zorder>
+   <zorder>button_order_datevExport</zorder>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

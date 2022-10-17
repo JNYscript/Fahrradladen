@@ -1,0 +1,3 @@
+{
+    "files": ["customers.ui","warehouse.ui","mainmenu.ui","login.ui","order.ui","order_lineitem.ui","conflicts.ui"]
+}
