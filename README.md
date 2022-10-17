@@ -14,9 +14,7 @@ einzugeben.
 1. "pip install requirements.txt" ist zum Installieren der Python Module.
 2. Programm kann über "python setup.py" gestartet werden.
 
-**Windows Binaries:**
 
-Die Datei „Installer.exe“ im ordner "bin" ausführen. Nur für Windows.
 
 ## 3. Login
 
